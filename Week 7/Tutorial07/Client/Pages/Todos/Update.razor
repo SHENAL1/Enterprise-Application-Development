@@ -1,0 +1,86 @@
+﻿@page "/todos/edit/{Id:guid}"
+
+@attribute [Authorize]
+@inject NavigationManager Navigation
+@inject HttpClient httpClient;
+@inject HttpClient Http
+@using Newtonsoft.Json;
+
+<h3>Edit Todos</h3>
+
+<EditForm Model="Todo" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+
+    <div class="form-group">
+        <label class="control-label">Name</label>
+        <InputText @bind-Value="Todo.Name"></InputText>
+        <ValidationMessage For="@(()=>Todo.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Description</label>
+        <InputText @bind-Value="Todo.Description"></InputText>
+        <ValidationMessage For="@(()=>Todo.Description)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public Guid Id { get; set; }
+
+    private Todo Todo { get; set; }
+
+    //protected override void OnInitialized()
+    //{
+    ///if (App.Todos.ContainsKey(Id))
+    // todo = App.Todos[Id];
+    //else
+    // Console.WriteLine("Id does not exsits.");
+    //}
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Todo = await Http.GetFromJsonAsync<Todo>($"/api/Todos/{Id}");
+
+
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+        catch (Exception e)
+        {
+
+        }
+    }
+
+
+    private async void HandleValidSubmit()
+    {
+        App.Todos[Id] = Todo;
+        Navigation.NavigateTo("/todos");
+
+        try
+        {
+            var response = await Http.PutAsJsonAsync($"/api/Todos/{Todo.Id}", Todo);
+            response.EnsureSuccessStatusCode();
+
+
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+        catch (Exception e)
+        {
+
+        }
+    }
+
+
+
+}

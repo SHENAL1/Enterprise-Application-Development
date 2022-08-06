@@ -1,0 +1,11 @@
+F:\Documents\Level-6\Enterprise Application\Week 8\Tutorial08\Shared\bin\Debug\net5.0\Tutorial08.Shared.deps.json
+F:\Documents\Level-6\Enterprise Application\Week 8\Tutorial08\Shared\bin\Debug\net5.0\Tutorial08.Shared.dll
+F:\Documents\Level-6\Enterprise Application\Week 8\Tutorial08\Shared\bin\Debug\net5.0\ref\Tutorial08.Shared.dll
+F:\Documents\Level-6\Enterprise Application\Week 8\Tutorial08\Shared\bin\Debug\net5.0\Tutorial08.Shared.pdb
+F:\Documents\Level-6\Enterprise Application\Week 8\Tutorial08\Shared\obj\Debug\net5.0\Tutorial08.Shared.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\Level-6\Enterprise Application\Week 8\Tutorial08\Shared\obj\Debug\net5.0\Tutorial08.Shared.AssemblyInfoInputs.cache
+F:\Documents\Level-6\Enterprise Application\Week 8\Tutorial08\Shared\obj\Debug\net5.0\Tutorial08.Shared.AssemblyInfo.cs
+F:\Documents\Level-6\Enterprise Application\Week 8\Tutorial08\Shared\obj\Debug\net5.0\Tutorial08.Shared.csproj.CoreCompileInputs.cache
+F:\Documents\Level-6\Enterprise Application\Week 8\Tutorial08\Shared\obj\Debug\net5.0\Tutorial08.Shared.dll
+F:\Documents\Level-6\Enterprise Application\Week 8\Tutorial08\Shared\obj\Debug\net5.0\ref\Tutorial08.Shared.dll
+F:\Documents\Level-6\Enterprise Application\Week 8\Tutorial08\Shared\obj\Debug\net5.0\Tutorial08.Shared.pdb

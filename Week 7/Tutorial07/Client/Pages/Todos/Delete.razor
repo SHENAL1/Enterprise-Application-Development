@@ -1,0 +1,42 @@
+﻿@page "/todos/delete/{Id:guid}"
+
+@attribute [Authorize]
+@inject NavigationManager Navigation
+@inject HttpClient httpClient;
+@inject HttpClient Http
+@using Newtonsoft.Json;
+
+
+<h3>Are you sure you want to delete this todo</h3>
+<h4>Title</h4>
+<p>@Todo.Name</p>
+
+<h4>Description</h4>
+<p>@Todo.Description</p>
+
+
+<button class="btn btn-primary" @onclick="DeleteTodo"> Delete</button>
+
+@code {
+    [Parameter]
+    public Guid Id { get; set; }
+    private Todo Todo { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (App.Todos.ContainsKey(Id))
+            Todo = App.Todos[Id];
+        else
+            Console.WriteLine("Id does not exsits.");
+    }
+
+    private void DeleteTodo()
+    {
+    App.Todos.Remove(Id);
+    Navigation.NavigateTo("/todos");
+
+    }
+
+    
+
+}
